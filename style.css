@@ -8,8 +8,7 @@ Template: pinboard
 @import url('../pinboard/style.css');
 
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+body.home > article.column.twocol {
   display: inline-block;
 }
 
@@ -21,4 +20,8 @@ footer, header, hgroup, menu, nav, section {
 }
 .nextprev .next {
     float: right;
+}
+
+.twitter {
+  background-image: none;
 }
