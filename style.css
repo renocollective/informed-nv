@@ -1,0 +1,14 @@
+/*
+Theme Name: InformedNV
+Description: Child theme of Pinboard
+Author: Phill Kenoyer
+Template: pinboard
+*/
+
+@import url('../pinboard/style.css');
+
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: inline-block;
+}
