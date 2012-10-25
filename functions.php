@@ -28,3 +28,8 @@ function new_wp_trim_excerpt($text) {
 
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 add_filter('get_the_excerpt', 'new_wp_trim_excerpt');
+
+function infnv_action_wp_head() {
+	echo '<link rel="shortcut icon" href="' . get_stylesheet_directory_uri() . '/images/favicon.png" />';
+}
+add_action( 'wp_head', 'infnv_action_wp_head' );
