@@ -23,7 +23,12 @@
               <?php pinboard_social_bookmarks(); ?>
               <?php pinboard_post_author(); ?>
             </footer><!-- .entry-utility -->
-            <?php if ($single) { ?><div class="nextprev"><span class="prev"><?php previous_post('&lsaquo; %', '', 'yes', 'no'); ?></span><span class="next"><?php next_post('% &rsaquo;', '', 'yes', 'no'); ?></span></div><?php } ?>
+            <?php if ($single) { ?>
+            <div class="nextprev">
+              <span class="prev"><?php previous_post('&lsaquo; %', '', 'yes', 'yes'); ?></span>
+              <span class="next"><?php next_post('% &rsaquo;', '', 'yes', 'yes'); ?></span>
+            </div>
+            <?php } ?>
           </div><!-- .entry -->
           <?php comments_template(); ?>
         </article><!-- .post -->
