@@ -20,6 +20,8 @@ body.home > article.column.twocol {
 }
 .nextprev .next {
     float: right;
+    font-weight: bold;
+    font-size: 125%;
 }
 
 .twitter {
