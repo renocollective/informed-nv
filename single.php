@@ -25,8 +25,18 @@
             </footer><!-- .entry-utility -->
             <?php if ($single) { ?>
             <div class="nextprev">
-              <span class="prev"><?php previous_post('&lsaquo; %', '', 'yes', 'yes'); ?></span>
-              <span class="next"><?php next_post('% &rsaquo;', '', 'yes', 'yes'); ?></span>
+              <?php if ( get_adjacent_post( $in_same_cat = true, '', $previous = true ) ) : ?>
+					  <span class="prev"><?php previous_post_link('%link', '&lsaquo; Previous: %title', true ); ?></span>
+              <?php else : ?>
+					  <?php $last_post = array_pop( get_boundary_post( $in_same_cat = true, '', $oldest = false ) ); ?>
+					  <span class="prev">&lsaquo; <a href="<?php echo get_permalink( $last_post ); ?>">Last: <?php echo $last_post->post_title; ?></a></span>
+              <?php endif; ?>
+              <?php if ( get_adjacent_post( $in_same_cat = true, '', $previous = false ) ) : ?>
+					  <span class="next"><?php next_post_link('%link', 'Next: %title &rsaquo;', true ); ?></span>
+              <?php else : ?>
+					  <?php $first_post = array_pop( get_boundary_post( $in_same_cat = true, '', $oldest = true ) ); ?>
+					  <span class="next"><a href="<?php echo get_permalink( $first_post ); ?>">First: <?php echo $first_post->post_title; ?> &rsaquo;</a></span>
+              <?php endif; ?>
             </div>
             <?php } ?>
           </div><!-- .entry -->
